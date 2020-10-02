@@ -19,6 +19,7 @@ metadata:
   labels:
     app: accounts-db
     tier: db
+  namespace: bank-app
 spec:
   serviceName: "accounts-db"
   replicas: 1
@@ -31,6 +32,7 @@ spec:
       labels:
         app: accounts-db
         tier: db
+      namespace: bank-app
     spec:
       containers:
       - name: accounts-db
@@ -60,6 +62,7 @@ metadata:
   labels:
     app: accounts-db
     tier: db
+  namespace: bank-app
 spec:
   ports:
     - port: 5432
@@ -76,6 +79,7 @@ metadata:
   name: accounts-db-config
   labels:
     app: accounts-db
+  namespace: bank-app
 data:
   POSTGRES_DB: accounts-db
   POSTGRES_USER: accounts-admin

@@ -15,6 +15,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadgenerator
+  namespace: bank-app
 spec:
   selector:
     matchLabels:
@@ -26,6 +27,7 @@ spec:
         app: loadgenerator
       annotations:
         sidecar.istio.io/rewriteAppHTTPProbers: "true"
+      namespace: bank-app
     spec:
       terminationGracePeriodSeconds: 5
       restartPolicy: Always

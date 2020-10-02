@@ -16,6 +16,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ledgerwriter
+  namespace: bank-app
 spec:
   selector:
     matchLabels:
@@ -24,6 +25,7 @@ spec:
     metadata:
       labels:
         app: ledgerwriter
+      namespace: bank-app
     spec:
       terminationGracePeriodSeconds: 5
       containers:
@@ -74,6 +76,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ledgerwriter
+  namespace: bank-app
 spec:
   type: ClusterIP
   selector:

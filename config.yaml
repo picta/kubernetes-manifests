@@ -16,6 +16,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: environment-config
+  namespace: bank-app
 data:
   LOCAL_ROUTING_NUM: "123456789"
   PUB_KEY_PATH: "/root/.ssh/publickey"
@@ -24,6 +25,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: service-api-config
+  namespace: bank-app
 data:
   TRANSACTIONS_API_ADDR: "ledgerwriter:8080"
   BALANCES_API_ADDR: "balancereader:8080"
@@ -35,6 +37,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: default-data-config
+  namespace: bank-app
 data:
   USE_DEFAULT_DATA: "True"
   # All default user accounts are hardcoded to use the login password 'password'
